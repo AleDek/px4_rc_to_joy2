@@ -11,11 +11,11 @@ def generate_launch_description():
     return LaunchDescription([
 
         ## launch microros agent
-        ExecuteProcess(
-            cmd=['MicroXRCEAgent', 'udp4', '-p', '8888'],
-            name='micro_agent_px4',  
-            output='both',
-        ),
+        # ExecuteProcess(
+        #     cmd=['MicroXRCEAgent', 'udp4', '-p', '8888'],
+        #     name='micro_agent_px4',  
+        #     output='both',
+        # ),
 
 
         ## Nodo rc_to_joy
@@ -24,7 +24,7 @@ def generate_launch_description():
             executable='rc_to_joy',  # Name of your executable in setup.py
             name='rc_to_joy',
             output='screen',
-            parameters=[os.path.join(get_package_share_directory('px4_rc_to_joy2'), 'config', 'rc_to_joy_params.yaml')],  # Load parameters from the YAML file:cite[1]:cite[2]
+            parameters=[os.path.join(get_package_share_directory('px4_rc_to_joy2'), 'config', 'rc_to_joy_params_h16.yaml')],  # Load parameters from the YAML file:cite[1]:cite[2]
             remappings=[
                 ('/joy', '/rc_joy'),
             ]

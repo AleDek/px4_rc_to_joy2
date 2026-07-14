@@ -119,10 +119,8 @@ RcToJoy::RcToJoy() : Node("rc_to_joy")
     rmw_qos_profile_t qos_profile = rmw_qos_profile_sensor_data;
     auto qos = rclcpp::QoS(rclcpp::QoSInitialization(qos_profile.history, 5), qos_profile);
 
-    _rc_sub = this->create_subscription<px4_msgs::msg::RcChannels>(
-        "/fmu/out/rc_channels", qos,
-        std::bind(&RcToJoy::rc_cb, this, std::placeholders::_1));
-    _joy_pub = this->create_publisher<sensor_msgs::msg::Joy>("/joy", 10);
+    _rc_sub = this->create_subscription<px4_msgs::msg::RcChannels>("/fmu/out/rc_channels", qos, std::bind(&RcToJoy::rc_cb, this, std::placeholders::_1));
+    _joy_pub = this->create_publisher<sensor_msgs::msg::Joy>("/joy", 1);
     _first_rc = false;
     _n_ch = 0;
 

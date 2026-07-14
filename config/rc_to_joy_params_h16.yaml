@@ -1,0 +1,10 @@
+rc_to_joy:
+  ros__parameters:
+    ch_to_axes: [1, 12]
+    reverse_axes: [-1.0, 1.0]
+    ch_to_buttons: [6, 9, 10]
+    reverse_buttons: [1.0, 1.0, 1.0]
+    nstates_buttons: [3.0, 6.0, 2.0]
+    pwm_max: 1.0
+    pwm_min: -1.0
+    pwm_deadzone: 0.001
