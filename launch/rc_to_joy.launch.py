@@ -10,12 +10,12 @@ import os
 def generate_launch_description():
     return LaunchDescription([
 
-        ## launch microros agent
-        ExecuteProcess(
-            cmd=['MicroXRCEAgent', 'udp4', '-p', '8888'],
-            name='micro_agent_px4',  
-            output='both',
-        ),
+        # ## launch microros agent
+        # ExecuteProcess(
+        #     cmd=['MicroXRCEAgent', 'udp4', '-p', '8888'],
+        #     name='micro_agent_px4',  
+        #     output='both',
+        # ),
 
 
         ## Nodo rc_to_joy
